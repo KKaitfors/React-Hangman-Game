@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/React-Hangman-Game/static/css/main.5eac1d7d.css",
-    "main.js": "/React-Hangman-Game/static/js/main.2547c39b.js",
+    "main.js": "/React-Hangman-Game/static/js/main.14fcaa71.js",
     "static/media/EraserRegular.ttf": "/React-Hangman-Game/static/media/EraserRegular.3f8aecef660ae811b2bc.ttf",
     "index.html": "/React-Hangman-Game/index.html",
     "main.5eac1d7d.css.map": "/React-Hangman-Game/static/css/main.5eac1d7d.css.map",
-    "main.2547c39b.js.map": "/React-Hangman-Game/static/js/main.2547c39b.js.map"
+    "main.14fcaa71.js.map": "/React-Hangman-Game/static/js/main.14fcaa71.js.map"
   },
   "entrypoints": [
     "static/css/main.5eac1d7d.css",
-    "static/js/main.2547c39b.js"
+    "static/js/main.14fcaa71.js"
   ]
 }
