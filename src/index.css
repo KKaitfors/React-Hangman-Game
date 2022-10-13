@@ -1,0 +1,301 @@
+:root {
+  --word-length: 7;
+}
+
+@font-face {
+  font-family: chalk;
+  src: url(Fonts/EraserRegular.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: chalk, sans-serif;
+  text-transform: uppercase;
+}
+
+html {
+  background-color: black;
+  text-align: center;
+}
+
+/*HANGMAN*/
+
+.gallows {
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 400px;
+}
+
+.gallows div:not(.skeleton, .head) {
+  background-color: #e1d9d1;
+}
+
+.base {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 0;
+  width: 85%;
+  height: 5%;
+  border-radius: 10px 10px 0 0;
+}
+
+.side-beam {
+  position: absolute;
+  width: 4%;
+  height: 80%;
+  bottom: 0;
+  right: 20%;
+  border-top-right-radius: 10px;
+}
+
+.top-beam {
+  position: absolute;
+  width: 50%;
+  height: 5%;
+  top: 20%;
+  left: 30%;
+  border-radius: 10px 10px 0 0;
+}
+
+.skeleton {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  width: 250px;
+  height: 70%;
+}
+
+.rope {
+  position: absolute;
+  width: 3%;
+  height: 20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.head {
+  position: absolute;
+  top: 19%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border: 5px solid #e1d9d1;
+  border-radius: 50%;
+  width: 25%;
+  height: 0;
+  padding-bottom: 25%;
+}
+
+.body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 44%;
+  width: 4%;
+  height: 30%;
+  border-radius: 5px 5px 10px;
+}
+
+.left-arm {
+  position: absolute;
+  width: 25%;
+  height: 3%;
+  right: 49%;
+  top: 45%;
+  transform-origin: bottom right;
+  transform: rotate(-45deg);
+  border-radius: 10px;
+}
+
+.right-arm {
+  position: absolute;
+  width: 25%;
+  height: 3%;
+  left: 49%;
+  top: 45%;
+  transform-origin: bottom left;
+  transform: rotate(45deg);
+  border-radius: 10px;
+}
+
+.left-leg {
+  position: absolute;
+  width: 30%;
+  height: 3%;
+  right: 48%;
+  top: 69%;
+  transform-origin: bottom right;
+  transform: rotate(-60deg);
+  border-radius: 10px;
+}
+
+.right-leg {
+  position: absolute;
+  width: 30%;
+  height: 3%;
+  left: 48%;
+  top: 69%;
+  transform-origin: bottom left;
+  transform: rotate(60deg);
+  border-radius: 10px;
+}
+
+/*WORD*/
+
+.word {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #e1d9d1;
+  margin-top: 3vh;
+}
+
+.word span {
+  display: inline-block;
+  flex: 1 1 25px;
+  max-width: 50px;
+  min-width: 25px;
+  min-height: 50px;
+  font-size: 2.5em;
+  margin: 15px;
+  border-bottom: 5px solid #e1d9d1;
+  border-radius: 10px;
+}
+
+/*LETTERBANK*/
+
+.letter-bank {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 3vh;
+  height: 25vh;
+  max-height: 175px;
+}
+
+/*LETTERBANK - GUESS FORM*/
+
+.guess {
+  display: flex;
+  width: 100px;
+  height: 75%;
+  margin-right: 1%;
+}
+
+#letter-guess {
+  color: #e1d9d1;
+  background-color: transparent;
+  width: 100%;
+  height: 70%;
+  font-size: 5em;
+  text-align: center;
+  box-shadow: 0 0 3px 5px #111111, 0 0 3px 3px #111111 inset;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+#letter-guess::placeholder {
+  color: #e1d9d1;
+}
+
+#letter-guess:focus::placeholder {
+  color: transparent;
+}
+
+#submit-guess {
+  color: #e1d9d1;
+  background-color: transparent;
+  width: 100%;
+  height: 30%;
+  font-size: 1em;
+  text-align: center;
+  border: none;
+  padding-top: 10%;
+  outline: none;
+}
+
+#submit-guess:hover {
+  font-size: 1.25em;
+}
+
+#submit-guess:active {
+  color: #817c77;
+}
+
+/* LETTERBANK - REMAINING LETTERS */
+
+.remaining-letters {
+  color: #e1d9d1;
+  background-color: transparent;
+  border-left: none;
+  width: 400px;
+  height: 100%;
+  border-radius: 10px;
+  margin-top: 0;
+  overflow: wrap;
+}
+
+.remaining-letters h1 {
+  text-align: center;
+  font-size: 1.25em;
+  margin: 2% 0;
+}
+
+.letters {
+  background-color: #111111;
+  padding: 0 3% 3%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 3px black inset;
+}
+
+.letters span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  width: 9%;
+  height: 25%;
+  margin: 1%;
+}
+
+.win {
+  color: Green;
+  font-size: 3.5em;
+}
+
+.loss {
+  color: red;
+  font-size: 3.5em;
+}
+
+/*RESET*/
+
+#reset {
+  background-color: transparent;
+  color: white;
+  display: block;
+  font-size: 1.5em;
+  margin: 5vh auto;
+  width: 200px;
+  height: 5vh;
+  border-radius: 10px;
+}
+
+#reset:hover {
+  font-size: 2em;
+}
+
+#reset:active {
+  color: #817c77;
+}
